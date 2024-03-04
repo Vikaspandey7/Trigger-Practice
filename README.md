@@ -1,7 +1,7 @@
-Salesforce Interview Trigger Practice
+#Salesforce Interview Trigger Practice
 Welcome to the Salesforce Interview Trigger Practice repository! 🚀
 
-Overview
+#Overview
 This repository is designed to help you practice and sharpen your skills in writing triggers for Salesforce interviews. Triggers are an essential part of customizing and automating business processes in Salesforce. Whether you're preparing for an interview or simply want to enhance your trigger-writing abilities, this collection of trigger scenarios will provide you with valuable hands-on experience.
 
 How to Use
