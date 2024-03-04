@@ -1,0 +1,21 @@
+When a user updates the account record, if a user changes the account name through an error "Account name once created cannot be modified".
+
+ -------------------------------------------------------------------------
+ Trigger Description:
+1. Object: Account
+2. Event: Before
+3. Operation: Update
+
+------------------------------------------------------------------------------
+ trigger AccountTrigger on Account (before update){
+ if (Trigger.isBefore && Trigger.isUpdate){
+ for (Account accNew: Trigger.New){ //Compare accNew record
+ //Compare accold record 
+ Account accOld = Trigger.oldMap.get(accNew.Id); 
+ //Get operator is used to get old record
+ if(accNew.Name!=accOld.Name){
+ accNew.addError('Account Name cannot be modified/changed once it is created'); 
+ }
+ } 
+ }
+ }
