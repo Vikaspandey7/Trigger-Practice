@@ -1,0 +1,32 @@
+While the user creates an account, Write a logic to create a contact with the same name and associate account and contact.
+
+ -------------------------------------------------------------------------
+ Trigger Description:
+1. Object: Account
+2. Event: After
+3. Operation: Insert
+
+------------------------------------------------------------------------------
+ trigger AccountTrigger on Account (after insert){
+ if (Trigger.isAfter && Trigger.isInsert){
+ AccountTriggerHandler.updateRelatedContact(Trigger.New);
+ }
+}
+
+-------------------------------------------------------------------------------
+public class AccountTriggerHandler {
+public static void updateRelatedContact(List<Account> accList)
+ {
+ //because for each account record we want contact. For that we need contact.
+ List <Contact> con = new List <Contact>(); // Bulfication
+ for (Account acc: accList){
+ Contact cont = new Contact (); // to create contact
+ cont.LastName = acc.Name; //because for each account record we want contact
+ cont.AccountId = acc.Id; // Onlyin after trigger permanent SF Id is generated.
+ con.add(cont); //Adding in Con list
+ }
+ if (con.size()>0){ //Always before insert check sixe of rec
+ INSERT con;
+ }
+}
+} 
