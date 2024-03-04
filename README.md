@@ -1,4 +1,4 @@
-# Salesforce Interview Trigger Practice
+# Trigger Practice
 Welcome to the Salesforce Interview Trigger Practice repository! 🚀
 
 # Overview
