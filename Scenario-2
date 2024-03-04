@@ -1,0 +1,27 @@
+While the user creating an account, if Annual Revenue provided by the user is less than 1000, then write a logic to throw an error to the user
+
+ -------------------------------------------------------------------------
+ Trigger Description:
+1. Object: Account
+2. Event: Before
+3. Operation: Insert
+
+------------------------------------------------------------------------------
+ trigger AccountTrigger on Account (before insert){
+ if (Trigger.isbefore && Trigger.isInsert){
+ AccountTriggerHandler.checkAnnualRevenue(Trigger.New);
+ } 
+}
+
+-------------------------------------------------------------------------------
+public class AccountTriggerHandler {
+public static void checkAnnualRevenue(List<Account> accList)
+ {
+ for (Account acc: accList){
+ if (acc.AnnualRevenue <1000){
+ //addError is used to display the error
+ acc.addError ('Annual Revenue cant be less than 1000');
+ }
+ }
+ }
+ } 
