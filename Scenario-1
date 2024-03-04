@@ -1,9 +1,12 @@
-While the user creating an account, if the user provides a billing address but not a shipping address write a logic to populate the shipping address with the billing address.
+While the user creating an account, if the user provides a billing address but not a shipping address write a logic 
+to populate the shipping address with the billing address.
+
  -------------------------------------------------------------------------
  Trigger Description:
 1. Object: Account 
 2. Event: Before 
 3. Operation: Insert
+
 ------------------------------------------------------------------------------
  trigger AccountTrigger on Account (before insert){
  if (Trigger.isBefore && Trigger.isInsert){
