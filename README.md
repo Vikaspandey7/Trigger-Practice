@@ -9,7 +9,7 @@ This repository is designed to help you practice and sharpen your skills in writ
 Clone this repository to your local machine using the following command:
 
 ### Copy code
-git clone (https://github.com/Vikaspandey7/Trigger-Practice)
+git clone (https://github.com/Vikaspandey7/Trigger-Practice.git)
 
 ### Choose a Scenario:
 Navigate to the "Scenarios" directory and choose a trigger scenario that you want to work on. Each scenario comes with a description of the business requirement and the expected trigger behavior.
