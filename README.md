@@ -10,7 +10,8 @@ Clone this repository to your local machine using the following command:
 
 ## Copy code
 git clone https://github.com/your-username/salesforce-interview-triggers.git
-Choose a Scenario:
+
+### Choose a Scenario:
 Navigate to the "Scenarios" directory and choose a trigger scenario that you want to work on. Each scenario comes with a description of the business requirement and the expected trigger behavior.
 
 ## Write the Trigger:
