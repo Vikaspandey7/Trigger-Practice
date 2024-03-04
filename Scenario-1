@@ -1,0 +1,29 @@
+# While the user creating an account, if the user provides a billing address but not a shipping address write a logic to populate the shipping address with the billing address.
+ -------------------------------------------------------------------------
+ Trigger Description:
+1. Object: Account 
+2. Event: Before 
+3. Operation: Insert
+------------------------------------------------------------------------------
+ trigger AccountTrigger on Account (before insert){
+ if (Trigger.isBefore && Trigger.isInsert){
+ AccountTriggerHandler.updateShippingAddress(Trigger.New);
+ }
+}
+
+-------------------------------------------------------------------------------
+public class AccountTriggerHandler {
+public static void updateShippingAddress(List<Account> accList)
+ {
+ for (Account acc: accList){
+ if (acc.ShippingCity == null)
+ acc.ShippingCity = acc.BillingCity;
+ if (acc.ShippingCountry == null)
+ acc.ShippingCountry = acc.BillingCountry;
+ if (acc.ShippingStreet == null)
+ acc.ShippingStreet = acc.BillingStreet;
+ if (acc.ShippingPostalCode == null)
+ acc.ShippingPostalCode = acc.BillingPostalCode;
+ }
+ }
+ } 
